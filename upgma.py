@@ -62,7 +62,6 @@ def upgma(points, k):
         for i in xrange(nc):
             for j in xrange(i+1, nc):
                 dis = euclidistance(nodes[i], nodes[j])
-#                print i, j, dis
                 if dis < sdis:
                     sdis = dis
                     c1 = nodes[i]; c2 = nodes[j];
@@ -79,7 +78,6 @@ def upgma(points, k):
         new_nodes = new_nodes + [node]
         nodes = new_nodes[:]
         nc = nc - 1
-#        print_cluster(nodes)
 
     return nodes
 
@@ -89,12 +87,3 @@ def print_cluster(nodes):
         points = nodes[i].points
         print points
     print
-
-points = [[9,10], [0,0], [1,1], [9,9], [10,10], [5,5], [6,5]]
-# plt.plot(points, 'b.')
-# plt.show()
-# dist = to_dist_matrix(points)
-# print dist
-
-nodes = upgma(points, 3)
-print_cluster(nodes)
